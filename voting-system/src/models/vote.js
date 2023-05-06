@@ -4,7 +4,6 @@ const VoteSchema = mongoose.Schema(
     {
         dpi: {
             type: String,
-            unique: true,
             required: true
         },
         candidate: {
@@ -13,6 +12,10 @@ const VoteSchema = mongoose.Schema(
         },
         ip: {
             type: String,
+            required: true
+        },
+        valid: {
+            type: Boolean,
             required: true
         }
     },

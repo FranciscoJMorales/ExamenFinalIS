@@ -43,11 +43,11 @@ let userLevelStrategy = new JwtStrategy(jwtOptions, function (jwt_payload, next)
 
 // Strategy to check token
 let checkStrategy = new JwtStrategy(jwtOptions, function (jwt_payload, next) {
-    console.log('PAYLOAD RECIBIDO: ', jwt_payload);
+    console.log('PAYLOAD RECEIVED: ', jwt_payload);
     if (jwt_payload) {
         next(null, jwt_payload.user);
     } else {
-        console.error('no token provided');
+        console.error('No token provided');
         next(null, false);
     }
 });
